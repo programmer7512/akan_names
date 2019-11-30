@@ -8,13 +8,12 @@ function input() {
     var year = document.getElementById("year").value;
     var yy = parseInt(year);
     var cc = (yy - 1) / 100 + 1;
-
     var result = parseInt(((cc / 4) - 2 * cc - 1) + ((5 * yy / 4)) + ((26 * (mm + 1) / 10)) + dd) % 7;
     var boyNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
     var girlNames = ["Akosua", " Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
     if (document.getElementById("gender").checked) {
         var gender = 'male';
-        n
+
     }
     else {
         var gender = 'female';
@@ -25,10 +24,7 @@ function input() {
     else if (dd < 1 || dd > 31) {
         alert("invalid date");
     }
-
-
     if (Math.round(result) == 1 && gender === 'male');
-
     {
         document.getElementById("display").innerHTML = ("You were born on Monday ,your akan name is " + boyNames[1]);
     }
@@ -62,7 +58,6 @@ function input() {
     else if (Math.round(result) == 4 && gender === 'female') {
         document.getElementById("display").innerHTML = ("You were born on Thursday,your akan name is " + girlNames[4]);
     }
-
     else if (Math.round(result) == 5 && gender === 'female') {
         document.getElementById("display").innerHTML = ("You were born on Friday,your akan name is " + girlNames[5]);
     }
@@ -72,7 +67,6 @@ function input() {
     else if (Math.round(result) == 0 && gender === 'female') {
         document.getElementById("display").innerHTML = ("You were born on Sunday,your akan name is " + girlNames[0]);
     }
-
     else {
         alert("invalid data please");
     }
