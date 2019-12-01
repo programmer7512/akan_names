@@ -20,5 +20,10 @@ Thursday:  Yaa
 Friday: Afua
 Saturday: Ama
 #Sunday at index [0] and saturday at index [6].
-link to live site ###################
-licence and copyright information ##@@@@!@####$
+link to live site https://programmer7512.github.io/akan_names/.
+licence and copyright free to use.
+
+#DIRECTION FOR USE
+clone it and run no technical skills required
+then navigate to get name button and select your birthday and select GENDER.
+click get a name then BOOOM there is your akane name
