@@ -147,7 +147,7 @@ table tbody tr td:first-of-type {
     <body>
       <table align="center">
       <tr>
-        <th colspan="2"><u>IMAGES OF AKAN PEOPLE</u></th>
+        <th colspan="2">IMAGES OF AKAN PEOPLE</th>
       </tr>
        <!-- <td>Click the image to make it large</td> -->
       <tr>
@@ -159,7 +159,8 @@ table tbody tr td:first-of-type {
       <!-- <p style=";"> -->
         <h3 style="width: calc(100% - 2em);color: white; text-align:center;border:3px;border-style:solid; border-color:black; padding: 1em;background-color:navy; text-align:center">This a system built to assign akan names to people.<br>
       Akan uses day of birth and respective gender to give their commity members names.<br>
-      Simply click <span style="color:red"> get name</span> and select your akan name.</h3></p>
+      Simply click <span style="color:red"> get name</span> and select your akan name.<br>
+      Check below the table once you submit.</h3></p>
       <!-- <div style="background-color:powderblue",display:inline;>
       </div> -->
         <table>
@@ -297,8 +298,7 @@ form.addEventListener(
             );
 
         // create a message string
-        let message = 'You were born on a ' + days[birthdate.getDay()] + ' and your AKAN name is "' + names[gender][birthdate.getDay()] + '"';
-
+        let message = 'YOU WERE BORN ON A ' +  days[birthdate.getDay()] + ' YOUR AKAN NAME IS "' + names[gender][birthdate.getDay()] + '"';
 
         // if the message area has been found, update it with the message
         if(display)
