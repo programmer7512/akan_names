@@ -20,5 +20,5 @@ Thursday:  Yaa
 Friday: Afua
 Saturday: Ama
 #Sunday at index [0] and saturday at index [6].
-link to live site ###################
-licence and copyright information ##@@@@!@####$
+link to live site 
+licence and copyright information free to use and make corrections where possible
