@@ -27,3 +27,5 @@ licence and copyright free to use.
 clone it and run no technical skills required
 then navigate to get name button and select your birthday and select GENDER.
 click get a name then BOOOM there is your akane name
+
+technologies used javascript ,html and css for the styling
