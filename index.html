@@ -1,38 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-      body{
-     background-color:powderblue;
-   }
-    </style>
-</head>
-<body>
-  <div class="marquee">
-                  <marquee>How to get The Ghananian Akan name</marquee>
-              </div>
-    <div class="form">
-        <div>
-            <label>Century</label><br>
-            <input type="text" id="century" placeholder="Century in number" required><br><br>
-            <label>Month</label><br>
-            <input type="text" id="month" placeholder="Month in number" required><br><br>
-            <label>Day</label><br>
-            <input type="text" id="day" placeholder="Day in number" required><br><br>
-            <label>Year</label><br>
-            <input type="text" id="year" placeholder="Year in number" required><br><br>
-            <label>Gender</label><br>
-            <input type="radio" name="gender" id="gender" value="male" checked> Male<br><br>
-            <input type="radio" name="gender" value="female"> Female<br><br>
-            <input type="submit" value="Submit" onclick="input()">
-            <!-- <input type="reset" value="Reset"/> -->
-        </div>
-        <p id="display"></p>
-    </div>
-    <script src="script.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+dialog {
+    margin: 0 auto;
+    width: 32em;
+
+    border: none;
+
+    box-shadow: 0 0 0.2em #333333;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+form:target {
+    display: block;
+}
+
+fieldset {
+    border: none;
+}
+
+form fieldset {
+    padding: 0.5em 0;
+}
+
+form > fieldset {
+    padding: 0;
+}
+
+form > fieldset:last-of-type {
+    text-align: right;
+    padding: 0.5em 1em;
+    background-color: lightgray;
+}
+
+form > fieldset:first-of-type > legend {
+    background-color: navy;
+    color: white;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    margin: 0 0 1em 0;
+    width: calc(100% - 2em);
+}
+
+form label {
+    padding: 0.5em 0;
+}
+
+form > fieldset fieldset legend {
+    display: block;
+
+    margin-top: 1em;
+}
+
+form > fieldset > label,
+form > fieldset > fieldset {
+    padding: 0.5em 1em;
+}
+
+form > fieldset > fieldset {
+    margin-top: 1em;
+}
+
+form button {
+    border: none;
+    padding: 0.5em 1em;
+
+    background-color: green;
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    width: 48em;
+    margin: 2em auto;
+}
+
+table caption {
+    text-align: left;
+    text-transform: uppercase;
+    padding: 0.5em 0;
+}
+
+table caption a {
+    float: right;
+    padding: 0.5em 1.5em;
+    background-color: blue;
+    color: white;
+    text-transform: lowercase;
+    text-decoration: none;
+}
+
+table thead {
+    color: white;
+    background-color: navy;
+}
+
+table thead th {
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+}
+
+table td {
+    text-transform: capitalize;
+    padding: 0.4em 1em;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: lightgray;
+}
+
+table tfoot tr:last-of-type {
+    border-top: 1px solid navy;
+    border-bottom: 1px solid navy;
+}
+
+table tfoot td {
+    padding: 0.5em 1em;
+}
+
+table tbody tr td:first-of-type {
+    text-align: right;
+    font-weight: bold;
+}
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>akan names by day of birth<a href="#form">get name</a></caption>
+            <thead>
+                <tr>
+                    <th rowspan="2">weekday of birth</th>
+                    <th colspan="2">Akan names</th>
+                </tr>
+                <tr>
+                    <th>male</th>
+                    <th>female</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>sunday</td>
+                    <td>kwasi</td>
+                    <td>akosua</td>
+                </tr>
+                <tr>
+                    <td>monday</td>
+                    <td>kwadwo</td>
+                    <td>adwoa</td>
+                </tr>
+                <tr>
+                    <td>tuesday</td>
+                    <td>kwabena</td>
+                    <td>abenaa</td>
+                </tr>
+                <tr>
+                    <td>wednesday</td>
+                    <td>kwakwu</td>
+                    <td>akua</td>
+                </tr>
+                <tr>
+                    <td>thursday</td>
+                    <td>yaw</td>
+                    <td>yaa</td>
+                </tr>
+                <tr>
+                    <td>friday</td>
+                    <td>kofi</td>
+                    <td>afua</td>
+                </tr>
+                <tr>
+                    <td>saturday</td>
+                    <td>kwame</td>
+                    <td>ama</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td id="display" colspan="3"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <dialog>
+            <form id="form" action="/" method="dialog">
+                <fieldset>
+                    <legend>Akan name generator</legend>
+                    <label>date of birth
+                        <input type="date" required="required" />
+                    </label>
+                    <fieldset>
+                        <legend>gender</legend>
+                        <label>male
+                            <input type="radio" name="gender" value="male" required="required" />
+                        </label>
+                        <label>female
+                            <input type="radio" name="gender" value="female" required="required" />
+                        </label>
+                    </fieldset>
+                </fieldset>
+                <fieldset>
+                    <button type="submit">get name</button>
+                </fieldset>
+            </form>
+        </dialog>
+        <script>
+let dialog = document.querySelector('dialog');
+
+// find the place to insert message
+let display = document.querySelector('#display');
+
+// define behaviour for when you click on "get name" button
+document.querySelectorAll('caption a')
+    .forEach(
+        href => {
+            href.addEventListener(
+                  'click'
+                , event => {
+                    event.preventDefault();
+
+                    // reset the message
+                    display.innerHTML = '';
+
+                    // show the dialog box
+                    dialog.showModal();
+                }
+            );
+        }
+    );
+
+// get the form
+let form = document.querySelector('form');
+
+// when the form is submitted, do the following
+form.addEventListener(
+      'submit'
+    , event => {
+        // block the page from reloading
+        event.preventDefault();
+
+        // days of the week
+        let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+        // names
+        let names = {
+              "male" : ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]
+            , "female" : ["Akosua", " Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"]
+        };
+
+        // get the date of birth from input form
+        let birthdate = new Date(form.querySelector('input[type="date"]').value);
+
+        // get the selected gender by checking which radio button has been selected
+        let gender = '';
+        form.querySelectorAll('input[name="gender"]')
+            .forEach(
+                input => {
+                    if(input.checked)
+                        gender = input.value;
+                }
+            );
+
+        // create a message string
+        let message = 'You were born on a ' + days[birthdate.getDay()] + ' and your AKAN name is "' + names[gender][birthdate.getDay()] + '"';
+
+
+        // if the message area has been found, update it with the message
+        if(display)
+            display.innerHTML = message;
+
+        if(dialog)
+            dialog.close();
+    }
+);
+
+        </script>
+    </body>
 </html>
